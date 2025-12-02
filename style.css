@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.237);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.box {
+    height: 200px;
+    width: 200px;
+    transition: all 0.3s linear;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 1200px) {
+    .box {
+        height: 230px;
+        width: 230px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .box {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .box {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .box {
+        height: 130px;
+        width: 130px;
+    }
+}
+
+
+.red {
+    background: url(./img.1.jpeg) center/cover no-repeat;
+}
+
+.blue {
+    background: url(./img.2.jpeg) center/cover no-repeat;
+}
+
+.green {
+    background: url(./img3.jpg) center/cover no-repeat;
+}
+
+.yellow {
+    background: url(./chatgpt.png) center/cover no-repeat;
+}
+
+.brown {
+    background: url(./img.4.png) center/cover no-repeat;
+}
+
+
+.box:hover {
+    transform: scale(1.2);
+    opacity: 1 !important;
+    z-index: 999;
+}
+
+
+body:has(.box:hover) .box {
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+/* Bring hovered box upfront */
+body:has(.box:hover) .box:hover {
+    opacity: 1 !important;
+    transform: scale(1.2) !important;
+}
